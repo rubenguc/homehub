@@ -8,7 +8,7 @@ use fltk::{
     enums,
     input::Input,
     prelude::GroupExt,
-    window::{self, DoubleWindow, Window},
+    window::{DoubleWindow, Window},
 };
 
 use crate::models::{Home, NewHome};
@@ -16,7 +16,6 @@ use crate::service::HomeService;
 
 const WIDGET_WITDTH: i32 = 500;
 const WIDGET_HEIGHT: i32 = 600;
-const WIDGET_PADDING: i32 = 10;
 
 fn generete_input_with_label(
     title: &'static str,
@@ -255,7 +254,6 @@ impl GUI {
                     self.clear_button.deactivate();
                 }
                 Some(Message::Select) => {
-                    println!("Select");
                     if self.list.value() == 0 {
                         self.update_button.deactivate();
                         self.delete_button.deactivate();
